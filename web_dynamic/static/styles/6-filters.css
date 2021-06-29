@@ -51,6 +51,13 @@ input[type="checkbox"] {
     margin-right: 10px;
 }
 
+.amenities h4{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    height: 16px;
+}
+
 .amenities {
     height: 100%;
     width: 25%;
