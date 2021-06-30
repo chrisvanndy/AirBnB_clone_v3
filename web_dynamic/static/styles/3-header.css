@@ -15,10 +15,12 @@ header .logo {
     border-radius: 50%;
     background-color: #cccccc;
     right: 30px;
+    float: right;
     width: 40px;
-    height: 25px;
-    top: 20px;
+    height: 40px;
+    top: 15px;
 }
 
 #api_status.available {
     background-color: #ff545f;
+}

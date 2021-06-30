@@ -1,10 +1,16 @@
-function post () {
+function post (dict) {
+    if (dict === undefined) {
+      dict = {};
+    }
     $.ajax({
       url: "http://0.0.0.0:5001/api/v1/places_search/",
       method: "POST",
       contentType: 'application/json',
-      data: JSON.stringify({}),
+      data: JSON.stringify(dict),
+      processData: false,
+      dataType: 'json',
       success: function(data) {
+      $('.places').html('');
         for (let x = 0; x < data.length; x++) {
           let place = data[x];
           $('.places').append('<article>' +
@@ -53,5 +59,12 @@ function post () {
       } else {
         $('DIV#api_status').removeClass('available');
       }
+    });
+    $('button').click(function() {
+      let newList = []
+      for (const key in amenities) {
+        newList.push(amenities[key])
+      }
+      post({ amenities: newList });
     });
   });
